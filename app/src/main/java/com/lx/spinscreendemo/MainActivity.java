@@ -1,10 +1,9 @@
 package com.lx.spinscreendemo;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onStart() {
@@ -15,8 +14,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         Logger.d("onCreate");
+    }
+
+    @Override
+    public void onRefreshUI() {
+        super.onRefreshUI();
+        setContentView(R.layout.activity_main);
+        ((TextView)findViewById(R.id.text)).setText("hello screen");
     }
 
     @Override
@@ -43,19 +48,6 @@ public class MainActivity extends AppCompatActivity {
         Logger.d("onDestroy");
     }
 
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Logger.d("横屏");
-        } else {
-
-            Logger.d("竖屏");
-        }
-
-    }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -67,6 +59,5 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         Logger.d("onRestoreInstanceState");
     }
-
 
 }
