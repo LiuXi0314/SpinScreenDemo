@@ -15,7 +15,7 @@ public class BaseActivity extends FragmentActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Logger.d("onCreate");
-        onRefreshUI();
+
     }
 
     /**

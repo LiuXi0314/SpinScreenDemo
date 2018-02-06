@@ -91,4 +91,10 @@ public class BaseFragment extends Fragment {
         super.onConfigurationChanged(newConfig);
         log("onConfigurationChanged");
     }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        log("onViewStateRestored");
+    }
 }
