@@ -16,21 +16,12 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"/>
 
-    <com.lx.spinscreendemo.MTextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ef4b3f"
-        android:gravity="center"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ffffffff"/>
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        >
 
+    </FrameLayout>
 </LinearLayout>
