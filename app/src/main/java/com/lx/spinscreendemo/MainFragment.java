@@ -1,5 +1,6 @@
 package com.lx.spinscreendemo;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 public class MainFragment extends BaseFragment {
 
     private TextView textView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,5 +33,13 @@ public class MainFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         textView.setText("test");
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+
+        super.onConfigurationChanged(newConfig);
+        Logger.d("fragment textView="+textView.toString() + textView.getText());
+
     }
 }
